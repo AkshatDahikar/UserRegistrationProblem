@@ -62,11 +62,11 @@ public class Registration {
 	        return Pattern.matches(regex, mobileNo); 
 	    }
 	 public static boolean checkPassword(String password) { 
-		 String regex = "^.{8}$";
 	        String charLength = "^.{8,}$";
 		     String uppercaseChar= ".*[A-Z].*";
-
 		        String numericChar = ".*[0-9].*";
-		        return Pattern.matches(charLength, password) && Pattern.matches(uppercaseChar, password)&&Pattern.matches(numericChar, password);
+		        String specialChar = "^[a-zA-Z0-9]*[!@#$%^&*()_+\\-={}\\[\\]:;\"'<>,.?/\\|\\`~][a-zA-Z0-9]*$";
+				return Pattern.matches(charLength, password) && Pattern.matches(uppercaseChar, password)
+						&& Pattern.matches(numericChar, password)&& Pattern.matches(specialChar, password);
 }
 }
