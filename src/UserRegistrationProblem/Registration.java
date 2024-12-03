@@ -63,6 +63,8 @@ public class Registration {
 	    }
 	 public static boolean checkPassword(String password) { 
 		 String regex = "^.{8}$";
-	        return Pattern.matches(regex, password);
+	        String charLength = "^.{8,}$";
+		     String uppercaseChar= ".*[A-Z].*";
+		        return Pattern.matches(charLength, password) && Pattern.matches(uppercaseChar, password);
 }
 }
