@@ -65,6 +65,8 @@ public class Registration {
 		 String regex = "^.{8}$";
 	        String charLength = "^.{8,}$";
 		     String uppercaseChar= ".*[A-Z].*";
-		        return Pattern.matches(charLength, password) && Pattern.matches(uppercaseChar, password);
+
+		        String numericChar = ".*[0-9].*";
+		        return Pattern.matches(charLength, password) && Pattern.matches(uppercaseChar, password)&&Pattern.matches(numericChar, password);
 }
 }
